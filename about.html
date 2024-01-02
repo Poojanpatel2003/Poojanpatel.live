@@ -28,7 +28,7 @@
             <div class="s-skill">
          <h1 class="sub-title1">About <span>Me</span></h1>
             <p class="pp"><b>- </b>Hey! It's 𝒫𝑜𝑜𝒿𝒶𝓃 Patel here.I am B.Tech CSE-AI 3<sup>rd</sup> year student from Parul University.</p>
-            <p class="pp"><b>- </b>I live in Visnagar, Mehsana from  Gujarat.</p>
+            <p class="pp"><b>- </b>I am live in Visnagar, Mehsana from  Gujarat.</p>
             <p class="pp"><b>- </b>I'm a Web designer with extensive for over 1 year.
                 <br><b>- </b>Expertise is to create websites fronted and backend.</p>
                 <p class="name"><b><i class="fa-solid fa-user"></i> Patel Poojan R.</b></a></p>
@@ -106,14 +106,10 @@
 
     <div class="Project">
         <h1 class="title2"><span>P</span>roject:-</h1>
-           <p class="p">>> I completed mini project which is Event Management System (Website) invented in group project.</p>
-          <br><a href="https://poojanpatel2003.github.io/Evento.live/"><p class="p"><i class='bx bx-link' ></i>click here for Event Management Website.</p></a>
-         <div class="project1">
-           
-            <p>Updates On Working... <img class="gif" src="images/output-onlinegiftools.gif" width="100px" height="100px"></p>
-           
-        
-        </div>
+     
+           <p class="p">>> I completed mini project which is Event Management System (Website) made on group project.</p>
+          <br><a href="https://poojanpatel2003.github.io/Evento.live/"><p class="p"><i class='bx bx-link' ></i>click here for Event Management Website</p></a>
+       
          <div class="project2">
             <p>Updates On Working... <img class="gif" src="images/output-onlinegiftools.gif" width="100px" height="100px"></p>
            
@@ -123,6 +119,24 @@
             <p>Updates On Working... <img class="gif" src="images/output-onlinegiftools.gif" width="100px" height="100px"></p>
         
         </div>
+        
+    </div>
+
+
+    <div class="certi">
+        <h1 class="ntitle"><span>C</span>ertificates</h1>
+       <p><span>HTML(Great Learning)</span></p>
+           <img class=htmlc src="images/html.jpeg" width="800px" height="450px">
+       
+        </div>
+    <div class="certi">
+    <p><span>CSS(Great Learning)</span></p>
+     <img src="images/Screenshot 2024-01-02 131943.png" width="800px" height="450px">
+     </div>
+     <div class="certi">
+    <p><span>Future Ready Talent</span></p>
+    <img src="images/Screenshot 2024-01-02 131823.png" width="800px" height="450px">
+</div>
         
     </div>
 </div>
@@ -165,8 +179,8 @@
              <div class="contact-right">
                 <h1 class="sub-title2">Comments<i class="fa-regular fa-comment-dots"></i></h1>
               <form name="submit-to-google-sheet">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <br><input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <br><input type="email" name="Email" placeholder="Your Email" required>
                 <br><input type="Number" name="Number" placeholder="Your Number" required>
           
                 <br><textarea name="Message" rows="6" placeholder="Your Message"></textarea>
@@ -182,8 +196,29 @@
      </div>
     <br><hr class="hr"><br>
      <h1 class="thank">Thank You</h1><br><hr class="hr">
-     
-        
+     <div class="cv">
+        <a href="geeksforgeeks.png" download="GFG">
+            <button type="button" class="cv">Download CV</button>
+            </a>  
+        </div> 
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbw-Ac5zWx3uoNNsL_a5YUmitzwnHjePuswIQz8wS014OHteEjoqd_o0_Dv3jaIY7Sqh/exec'
+            const form = document.forms['submit-to-google-sheet']
+          const  msg= document.getElementById("msg")
+
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    msg.innerHTML="Message sent successfully"
+                    setTimeout(function(){
+                        msg.innerHTML=""
+                    },3000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
      <script>
         var tablinks= document.getElementsByClassName("tab-links");
         var tabcontents= document.getElementsByClassName("tab-contents");

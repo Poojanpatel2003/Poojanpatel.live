@@ -215,12 +215,35 @@ body {
   font-size: 20px;
 }
 .p a:hover{
-    color:#0003b3
+    color:#0003b3;
+}
+.Project a{
+    color: #1194eb;
 }
 .thank{
     font-size: 40px;
     text-align: center;
 
+}
+.ntitle{
+    text-align: center;
+    font-size: 40px;
+}
+.ntitle span{
+    color: #0ef;
+}
+.certi p{
+    text-align: center;
+    font-size: 20px;
+    margin: 2% 1%;
+}
+.certi img{
+    margin-left: 20%;
+}
+.certi p span{
+    background-color: rgb(40, 158, 217);
+    padding:8px;
+    border-radius: 9px;
 }
 
 .contact-right{
@@ -483,7 +506,6 @@ form input,form textarea{
 }
 .sub-title2{
     width:50%;
-font-size:20px;
 }
 .contact-right{
   margin-left: 3%;
@@ -532,4 +554,17 @@ textarea{
     overflow: hidden;
    width: 80%;
  }
+.certi h1{
+    font-size: 30px;
+    text-align: left;
+    margin-left:14px;
+} 
+.certi p{
+    text-align: left;
+}
+.certi  img{
+    margin-left: 2%;
+width:450px;
+height:300px;
+}
 }

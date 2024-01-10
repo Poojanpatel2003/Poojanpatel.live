@@ -442,12 +442,15 @@ animation-delay:1s;
  
    margin-top: 15%;
   text-shadow:0 0 18px,
-  0 0 68px rgb(0, 8, 255),0 0 18px rgb(194, 0, 238);
+  0 0 48px rgb(0, 8, 255),0 0 68px rgb(208, 0, 255);
   
  
 
  
 
+}
+.home-content a p:hover{
+ color: #dc147f;
 }
 
 .home-content a {
@@ -473,6 +476,11 @@ animation-delay:1s;
     color:#07fcef;
     margin-left: 5%;
     font-size: 52px;
+ }
+.info p .what:hover{
+    color: rgb(14, 230, 158);
+    transform: translateY(-5px);
+    transition: .5s;
  }
 .thank{
     font-size: 50px;
@@ -730,7 +738,7 @@ width:134.5%;
     padding-left: 5%;
     }
  
- .what{
+.what{
     color:#07fcef;
     margin-left: 6%;
      font-size: 45px;

@@ -189,6 +189,10 @@ body {
     margin-bottom: 1.5%;
  
 }
+.cv button:hover{
+    background-color: #1194eb;
+    color: white;
+}
 .fullstack p span{
   font-size: 25px;
   font-weight: 600;
@@ -214,10 +218,10 @@ body {
   padding-left:25% ;
   font-size: 20px;
 }
-.p a:hover{
-    color:#0003b3;
-}
 .Project a{
+    color:#abc4d7;
+}
+.Project a:hover{
     color: #1194eb;
 }
 .thank{

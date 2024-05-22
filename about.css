@@ -165,18 +165,7 @@ body {
     margin:5%;
 
 }
-.project1,.project2,.project3{
-   width:40%;
- 
-    background-color: #07031b;
-    box-shadow: 0px 0px 12px 8px rgba(2, 94, 134, 0.669);
-    padding:55px;
-    border-radius: 10px;
-    margin:5%;
-    margin-left: 25%;
-   
 
-}
 .work1{
     margin: 3%;
     font-size: 30px;
@@ -200,9 +189,17 @@ body {
 .middle{
     display: flex;
 }
-.title,.title2{
+.title{
     margin: 2%;
 }
+.project1{
+    background-color: #07031b;
+    box-shadow: 0px 0px 12px 8px rgba(2, 94, 134, 0.669);
+    margin:1% 1% 0 1%;
+    border-radius: 10px;
+    padding:0.4rem
+}
+
 .info h3{
   margin: 1%;
 }
@@ -210,13 +207,34 @@ body {
     color: #0ef;
 }
 .title2{
-    text-align: center;
+    text-align: left;
     font-size: 35px;
+    padding: 1% 0 0.5% 1%;
+    background-color: rgb(0, 36, 94);
 
 }
 .p{
-  padding-left:25% ;
+  font-family:Georgia, 'Times New Roman', Times, serif;
   font-size: 20px;
+}
+.mentor{
+    font-size: 15px;
+    margin:0.1rem 0 0.1rem 0;
+}
+.project1 h6{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    font-size: 13px;
+    padding-top:1rem;
+    gap:0.5rem;
+  
+    
+}
+.project1 h6 p{
+    background-color: #075a91;
+    padding: 7px;
+    border-radius: 8px;
 }
 .Project a{
     color:#abc4d7;
@@ -230,11 +248,18 @@ body {
 
 }
 .ntitle{
+    margin-top: 1rem;
     text-align: center;
     font-size: 40px;
 }
 .ntitle span{
     color: #0ef;
+}
+.certimain{
+    display: grid;
+    grid-template-columns: 470px 470px 470px;
+    padding-left:10%;
+    grid-gap:0.4rem
 }
 .certi p{
     text-align: center;
@@ -515,7 +540,7 @@ form input,form textarea{
   margin-left: 3%;
  
     margin-top: 7%;
-    width:93.3%;
+    width:147%;
     
 }
 .hr{
@@ -545,8 +570,15 @@ form input,form textarea{
 .Project a i{
     color:#0def;
 }
-.project1 p,.project2 p,.project3 p{
-    color:#075a91;
+.ntitle{
+    background-color: #1194eb;
+    margin-top: 1.5rem;
+    width:150%;
+   
+}
+.certimain{
+    display: block;
+    
 }
 input[type="text"],
 input[type="email"],
@@ -558,16 +590,14 @@ textarea{
     overflow: hidden;
    width: 80%;
  }
-.certi h1{
-    font-size: 30px;
-    text-align: left;
-    margin-left:14px;
-} 
+
 .certi p{
-    text-align: left;
+    text-align: center;
+    width:140%;
+    margin:1rem 0 1rem 0
 }
 .certi  img{
-    margin-left: 2%;
+    margin-left: 14%;
 width:450px;
 height:300px;
 }

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="code.css">
+    <title>Code-Blog</title>
+  </head>
+  <body>
+    <section>
+    <div class="container">
+      <h1>Building a Code Blog Website with the MERN Stack</h1>
+      <h4>Overview</h4>
+      <p>
+        From February to March 2024, I embarked on an exciting journey to
+        develop a code blog website using the MERN stack. The MERN stack
+        comprises MongoDB, Express.js, React, and Node.js, offering a robust
+        framework for building dynamic web applications. Below, I share my
+        experience, the technologies used, and the key features of the project.
+        
+      </p><br>
+      <h4>Project Timeline</h4>
+      <li>Start Date: February 1, 2024</li>
+      <li>End Date: March 31, 2024</li>
+      <br />
+      <h4>Technologies Used</h4>
+      <li>
+        <b>MongoDB:</b> A NoSQL database that stores data in flexible, JSON-like
+        documents.
+      </li>
+      <li>
+        <b>Express.js:</b> A web application framework for Node.js, designed for
+        building robust APIs and web applications.
+      </li>
+      <li>
+        <b>React:</b> A JavaScript library for building user interfaces,
+        particularly single-page applications.
+      </li>
+      <li>
+        <b>Node.js: </b>A JavaScript runtime built on Chrome's V8 JavaScript
+        engine, enabling server-side scripting
+      </li>
+      <li>
+        <b>Bootstrap:</b> A CSS framework for developing responsive and
+        mobile-first web projects.
+      </li>
+      <br>
+      <h4>Development Process</h4>
+      <h5>1. Setting Up the Backend</h5>
+      <p>
+        I began by setting up the backend with Node.js and Express.js. MongoDB
+        was used as the database to store user information and blog posts.
+        Here's a snippet of the server setup:
+      </p>
+      <pre>
+            //connect environment
+
+            const express = require('express');
+            const mongoose = require('mongoose');
+            const bodyParser = require('body-parser');
+            const cors = require('cors');
+
+            const app = express();
+
+            app.use(bodyParser.json());
+            app.use(cors());
+
+            // Connect to MongoDB
+            mongoose.connect('mongodb://localhost:27017/blog', { useNewUrlParser: true, useUnifiedTopology: true })
+            .then(() => console.log('MongoDB connected'))
+            .catch(err => console.log(err));
+
+            // Define routes
+            app.use('/api/users', require('./routes/users'));
+            app.use('/api/posts', require('./routes/posts'));
+
+            const PORT = process.env.PORT || 5000;
+            app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+        </pre>
+        <h5>2. Creating the User Authentication System</h5>
+        <p>I implemented user authentication using JWT (JSON Web Tokens). This involved setting up registration and login routes, as well as middleware to protect certain routes.</p>
+        <pre>
+            //login user
+
+            const jwt = require('jsonwebtoken');
+            const bcrypt = require('bcryptjs');
+            const User = require('../models/User');
+
+            // User registration
+            app.post('/register', async (req, res) => {
+            const { username, email, password } = req.body;
+            const user = new User({ username, email, password: bcrypt.hashSync(password, 8) });
+            await user.save();
+            res.json({ message: 'User registered successfully' });
+            });
+
+            // User login
+            app.post('/login', async (req, res) => {
+            const { email, password } = req.body;
+            const user = await User.findOne({ email });
+            if (user && bcrypt.compareSync(password, user.password)) {
+                const token = jwt.sign({ id: user._id }, 'your_jwt_secret', { expiresIn: '1h' });
+                res.json({ token });
+            } else {
+                res.status(400).json({ message: 'Invalid credentials' });
+            }
+            });
+
+        </pre>
+        <h5>3. Building the Frontend with React</h5>
+        <p>The frontend was developed using React, with React Router for navigation. Bootstrap was integrated for styling and ensuring responsiveness.</p>
+        <br>
+        <h5>4. Implementing Key Features</h5>
+        <li> <b>Rich Text Editor:</b> Integrated Quill.js to provide a rich text editor for creating blog posts. Quill.js offers a user-friendly interface for writing and formatting text, allowing users to focus on content creation without worrying about the underlying HTML.</li>
+        <li> <b>Rich Text Editor:</b> Integrated Quill.js to provide a rich text editor for creating blog posts. Quill.js offers a user-friendly interface for writing and formatting text, allowing users to focus on content creation without worrying about the underlying HTML.</li>
+        <li> <b>Admin Dashboard:</b> Created an admin dashboard to manage blog posts and user comments. The dashboard includes features for viewing all posts, editing or deleting posts, and moderating comments to ensure a positive user experience.
+          </li>
+          <br>
+        <h4>Challenges Faced</h4>
+        <li> <b>Management:</b> Handling state across different components in React was challenging initially. I solved this by using React's Context API for global state management. This approach allowed me to share state and functionality across components without resorting to prop drilling.</li>
+        <li> <b>Security:</b> Ensuring secure authentication and protecting routes required careful handling of tokens and middleware. I used JWTs to manage authentication and set up middleware functions to protect sensitive routes from unauthorized access.</li>
+        <li> <b>Scalability:</b> Designing the database schema and API endpoints for scalability was a critical aspect of the project. I focused on creating modular and reusable code to facilitate future enhancements and maintenance.</li>
+        <br>
+        <h4>Lessons Learned:</h4>
+        <li><b>Component-Based Architecture:</b> Using React's component-based architecture made the frontend development process more organized and modular. It also made it easier to debug and maintain the codebase.</li>
+        <li><b>Asynchronous Programming:</b>  Working with asynchronous code in Node.js and handling promises effectively was an important aspect of the project. This experience enhanced my understanding of asynchronous programming and improved my ability to write efficient and non-blocking code.</li>
+        <li><b>Full-Stack Integration:</b>  Integrating the frontend and backend components seamlessly was a crucial part of the project. This experience reinforced the importance of clear API design and consistent data handling across the application.</li>
+        <br>
+        <h4>Conclusion</h4>
+        <p>Building this code blog website was a rewarding experience that enhanced my skills in the MERN stack. The project not only allowed me to delve deeper into full-stack development but also reinforced the importance of responsive design and secure coding practices. I look forward to using these skills in future projects and continuously improving my development process.</p>
+        <br>
+        <p>Feel free to check out the
+          <a href=""> GitHub repository</a> for this project to see the complete codebase.</p>
+    </div>
+    </section>
+  </body>
+</html>

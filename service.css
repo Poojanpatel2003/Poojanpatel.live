@@ -1,0 +1,208 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:'Gill Sans',  sans-serif;
+}
+.maincontainer{
+    position: relative;
+    width: 450px;
+    height: 850px;
+    margin-top: 3.5rem;
+    border-radius: 9px;
+    
+
+}
+body{
+    background-color: rgb(26, 26, 26);
+}
+.main{
+    display: flex;
+    justify-content: space-evenly;
+}
+.card{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style:preserve-3d ;
+    transition: all 0.5s ease;
+    text-align: justify;
+    border-radius: 9px;
+    box-shadow: 0 0 7px 5px rgb(79, 79, 214);
+  
+    
+}
+.card:hover{
+    transform: rotateY(180deg);
+}
+.front{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: #f3f3f3;
+    color:#000000;
+    padding:2rem;
+    border-radius: 9px;
+    
+}
+.front h1{
+    text-align: center;
+    font-size: 45px;
+}
+.front h4{
+    font-size: 30px;
+}
+.front p{
+    font-size:20px;
+}
+.front li{
+    font-size: 18px;
+    text-decoration: none;
+}
+.front p b{
+    font-size: 22px;
+}
+.front .price{
+    font-size: 30px;
+}
+.front .prices{
+    font-size: 30px;
+}
+.back .btn{
+  text-align: center;
+  font-size: 30px;
+}
+.back button{
+    font-size: 30px;
+    margin-top: 1rem;
+    border-radius: 8px;
+    padding:9px;
+    background-color: #000000;
+    color: white;
+    cursor: pointer;
+    border: 3px solid white;
+    
+}
+.back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background:transparent;
+    backdrop-filter: blur(80%);
+    color:#ffffff;
+    transform: rotateY(180deg);
+    padding:2rem;
+    border-radius: 9px;
+    font-family: 'Gill Sans',sans-serif;
+    
+}
+.back h3{
+    font-size: 25px;
+    font-weight: 200;
+}
+.back li b{
+    font-size:18px;
+    font-weight: 100;
+    
+}
+.back li{
+    font-size: 16px;
+}
+.contact{
+    display: flex;
+    flex-direction: column;
+    gap:0.5rem;
+    font-size: 20px;
+}
+.contact p a{
+    text-decoration: none;
+    color: #ffffff;
+}
+.social{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.social p{
+    font-size: 50px;
+}
+@media screen and (max-width:800px) {
+    .main{
+        
+        display: grid;
+        
+        grid-template-columns: 380px;
+        height: 91.5rem;
+    }
+    .maincontainer{
+        margin: 1.2rem 0.5rem;
+        width: 95%;
+        height: auto;
+        
+    }
+     .card{
+        width: 100%;
+        height: 100%;
+       
+    }
+    .front h1{
+        font-size: 1.2rem;
+    }
+    .front{
+        width: 100%;
+        padding:1rem;
+    }
+    .card .front img{
+        margin-left: 3.5rem;
+        width: 14rem;
+        height: 105px;
+    }
+    .front h4{
+        font-size: 1rem;
+    }
+    .front p{
+        font-size: small;
+        margin: 0.3rem 0;
+    }
+    .front li{
+        font-size: 0.7rem;
+    }
+    .front p b{
+        font-size: 15px;
+    }
+    .front .prices{
+        font-size: 18px;
+    }
+    .front .prices .price{
+        font-size: 20px;
+    }
+    .back{
+       
+        padding: 1rem;
+        
+    }
+    .back h3{
+        font-size:0.8rem ;
+    }
+    .back li{
+        font-size: 0.58rem;
+        font:100;
+        margin:0.1rem 0;
+    }
+    .back li b{
+        font-size: 0.67rem;
+    }
+    .back .contact p{
+        font-size: 11px;
+    }
+    .back .social p{
+        font-size: 30px;
+    }
+    .back button{
+        font-size: 20px;
+        padding:0.4rem 0.7rem;
+    }
+}

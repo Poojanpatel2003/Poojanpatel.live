@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="contact.css">
+    <title>Contact</title>
+</head>
+<body>
+   <section>
+
+    <div class="container">
+        <img src="images/IMG_20240606_153610_228[1].jpg" alt="">
+    <div class="contact">
+    <h1 class="contact1">Contact <i class="fa-solid fa-phone"></i></h1>
+  <form name="submit-to-google-sheet">
+    <input type="text" name="Name" placeholder="Name" tabindex="1" required>
+    <br><input type="email" name="Email" placeholder="Email" required>
+    <br><input type="text" name="Subject" placeholder="Subject" required>
+
+    <br><textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+    <br><button type="submit" class="btn-box">Submit</button>
+    </form>
+    <span id="msg"></span>
+
+    <div class="personal">
+      <p><b>E-mail: </b><a href="poojanpatel1595@gmail.com">poojanpatel1595@gmail.com</a></p>
+      <p><b>Phone No: </b><a href="tel:+919722379175">+91 9722379175</a></p>
+    </div>
+    <div class="social">
+      <p><a href="https://www.linkedin.com/in/poojan-patel-21022527b/"><i class="fa-brands fa-linkedin" style="color: rgb(10, 102, 194);"></i></a></p>
+      <p><a href="https://github.com/Poojanpatel2003"><i class="fa-brands fa-github" style="color:white;background-color:black;border-radius:3px;"></i></a></p>
+      <p><a href="https://wa.me/+919722379175"><i class="fa-brands fa-square-whatsapp" style="color:rgb(37 211 102)"></i></a></p>
+    </div>
+ </div>
+</div>
+</section>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycby7A9z6n4rMJzJ9JCJpzSC67aCDpl_WCd_IEROvQjgx4Jvcut0NcTMEsdLHVnk_YbslyQ/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg=document.getElementById("msg")
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {msg.innerHTML="Message sent Successfully"
+      setTimeout(function(){
+        msg.innerHTML=""
+      },4000)
+      form.reset();
+    })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+</body>
+</html>

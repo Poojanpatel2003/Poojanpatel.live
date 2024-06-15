@@ -1,0 +1,48 @@
+*{
+    margin:0;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+.container{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    border: 4px solid rgb(223, 0, 253);
+    padding:2em;
+    border-radius: 9px;
+    background-color: rgb(255, 255, 255);
+}
+h5{
+    font-size: 17px;
+}
+h4{
+    font-size: 21px;
+}
+pre{
+    width:auto;
+}
+@media screen and (max-width:800px) {
+    section{
+        margin: 1rem 0;
+        width:100%;
+    }
+    .container{
+        margin-left:0rem;
+        width:100%;
+        padding:1.3rem;
+    
+    }
+    pre{
+        white-space: pre-line;
+    }
+}

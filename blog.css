@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+body {
+    color: #fff;
+    background: #000;
+    
+}
+::-webkit-scrollbar{
+    width:0;
+
+}
+#scrollPath{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width:10px;
+    height: 100%;
+    background: rgb(255, 255, 255,0.05);
+    
+}
+#progressbar{
+    position: fixed;
+    top: 0;
+    right:0;
+    width:10px;
+    height: 100%;
+    background: linear-gradient(to top, #008aff,#00ffe7);
+    animation:animate 5s linear infinite;
+    border-radius: 10px;
+
+}
+@keyframes animate{
+    0%,100%{
+        filter: hue-rotate(0deg);
+    }
+    50%{
+        filter: hue-rotate(360deg);
+    }
+}
+#progressbar:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top,#008aff,#00ffe7);
+    filter: blur(30px);
+}
+nav{
+    background: #0a0a0a;
+    height: 60px;
+    width: 100%;
+   
+
+}
+
+
+nav ul{
+    float: right;
+    margin-right: 25px;
+    display: flex;
+    line-height: 6vh;
+}
+nav ul li{
+    list-style: none;
+    margin: 0 1.5rem;
+}
+nav ul li a{
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: white;
+    font-style: normal;
+    font-family:'Gill Sans', sans-serif;
+    padding:7px 5px;
+    transition: 0.4s;
+    
+}
+nav ul li a:hover{
+    border-top:3px solid white ;
+    border-bottom:3px solid white ;
+    border-radius: 8px;
+}
+
+.Project{
+    display: grid;
+    grid-template-columns: repeat(3,1.5fr);
+    grid-gap: 2rem;
+   margin:0 10% 0 10%;
+   position: relative;
+}
+
+
+.title{
+    margin: 2%;
+}
+.project1{
+    background-color: #00000050;
+    box-shadow: 0px 0px 12px 8px rgba(43, 47, 49, 0.669);
+    margin:1% 1% 0 1%;
+    border:0.5px solid rgb(201, 191, 191);
+    border-radius: 10px;
+    padding:0.4rem;
+    backdrop-filter: blur(40px);
+    height:15rem;
+    
+    
+  
+}
+
+
+
+.title2 span{
+    color: #0ef;
+}
+
+.p{
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: 26px;
+  background: -webkit-linear-gradient(#ffffff,#0714ce);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+.mentor{
+    font-size: 15px;
+    margin:0.1rem 0 0.1rem 0;
+}
+.project1 h6{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    font-size: 13px;
+    padding-top:1rem;
+    gap:0.3rem;
+    padding-bottom: 8px;
+    
+    
+}
+.project1 .ppp{
+    letter-spacing: 1px;
+    text-align: justify;
+    font-size: 16px;
+}
+.project1 h6 p{
+    background-color: #075a91;
+    padding: 7px;
+    border-radius: 8px;
+
+}
+.Project a{
+    color:#ffffffe8;
+    text-decoration: none;
+    
+    
+
+}
+.project1 a p{
+    border: 1px solid white;
+    padding:0.3rem;
+    width:7rem;
+    border-radius: 7px;
+}
+.Project a p:hover{
+    /* color: #5846fd; */
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 3px 3px rgb(6, 6, 237);
+    
+}
+section img{
+    transform: scaleX(-1);
+    width:50%;
+    height:100vh;
+    filter: opacity(30%);
+}
+.imgs{
+    display: flex;
+    position: fixed;
+}
+@keyframes slideRight{
+    0%{
+        transform:translatex(-100px);
+        opacity:0;
+    }
+    100%{
+        transform:translatex(0px);
+        opacity:1;
+    }
+ }
+ @keyframes slideLeft{
+    0%{
+        transform:translatex(100px);
+        opacity:0;
+    }
+    100%{
+        transform:translatex(0px);
+        opacity:1;
+    }
+ }
+ @keyframes slideTop{
+    0%{
+        transform:translateY(100px);
+        opacity:0;
+    }
+    100%{
+        transform:translateY(0px);
+        opacity:1;
+    }
+ }
+ @keyframes slideBottom{
+    0%{
+        transform:translateY(-100px);
+        opacity:0;
+    }
+    100%{
+        transform:translateY(0px);
+        opacity:1;
+    }
+ }
+
+ @media screen and (max-width:800px)
+ {
+    
+    .hideOnmobile{
+        display: none;
+    }
+    .menu-btn{
+        display: block;
+    }
+    nav ul{
+        line-height: 8vh;
+    }
+   .imgs{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+   }
+   .imgs img{
+    width:auto;
+    height: 60%;
+   }
+   .Project{
+    display: grid;
+    grid-template-columns: 23rem;
+    margin:0;
+   }
+  
+   .project1 h6{
+    display: flex;
+    flex-wrap: wrap;
+    width:100%;
+   }
+   .project1{
+    height:100%;
+   }
+}
